@@ -76,7 +76,6 @@ class HrEmployee(models.Model):
     @api.multi
     def write(self, vals):
         if vals.get('firstname') or vals.get('lastname'):
-            self.ensure_one()
 
             vals['name'] = ' '.join([
                 vals.get('firstname') or self.firstname or ' ',
